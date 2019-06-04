@@ -1,0 +1,8 @@
+<hello name="{{ data.title }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<input class="demo"   (keyup)="onKeyUp(titleInput.value)" [value]="data.title" #titleInput/>
+<br/>
+<br/>
+<button (click)="onButtonClick()">Show Message</button>
