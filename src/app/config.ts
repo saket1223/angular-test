@@ -8,14 +8,7 @@ export interface AppConfig {
 
 
 export const APP_CONFIG:AppConfig = {
-    apiUrl: 'https://angular-pb5f6r.stackblitz.io',
+    apiUrl: '',
     courseCacheSize: 10
 }
 
-
-export const CONFIG_TOKEN =
-    new InjectionToken<AppConfig>('CONFIG_TOKEN',
-        {
-            providedIn: 'root',
-            factory: () => APP_CONFIG
-        });
