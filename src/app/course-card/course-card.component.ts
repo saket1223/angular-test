@@ -30,7 +30,6 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
 
     @Input()
     cardIndex: number;
-
     @Output('courseSelected')
     courseEmitter = new EventEmitter<Course>();
 
@@ -39,6 +38,7 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
     images: QueryList<ElementRef>;
 
 
+    
     constructor() {
     }
 
@@ -48,9 +48,10 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
 
     ngAfterContentInit() {
 
-        console.log(this.images);
+        //console.log(this.images);
 
     }
+
 
 
     ngOnInit() {
@@ -61,11 +62,7 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
         return this.course && this.course.iconUrl;
     }
 
-    onCourseViewed() {
-
-        this.courseEmitter.emit(this.course);
-
-    }
+    
 
     cardClasses() {
         if (this.course.category == 'BEGINNER') {
@@ -79,7 +76,12 @@ export class CourseCardComponent implements OnInit, AfterViewInit, AfterContentI
 
         };
     }
+    onCourseViewed() {
 
+        this.courseEmitter.emit(this.course);
+        console.log("Clicked button:"+this.course.description);
+
+    }
 
 
 }
